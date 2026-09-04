@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDT Rakousy 2. turnus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">LDT Rakousy</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Úvod</a></li>
+      <li><a href="#about">O táboře</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#registration">Přihláška</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero" style="background: url('images/6205494.webp') center/cover no-repeat;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>LDT Rakousy</h1>
+      <p class="hero-subtitle">2. turnus &bull; Léto 2026</p>
+      <p class="hero-desc">Nezapomenutelný letní tábor plný dobrodružství, her a nových přátelství!</p>
+      <a href="#registration" class="btn btn-primary">Přihlásit dítě</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">O táboře</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">📅</div>
+          <h3>Termín</h3>
+          <p>14. – 28. července 2026</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">📍</div>
+          <h3>Místo</h3>
+          <p>Rakousy, Český ráj</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">👧</div>
+          <h3>Věk</h3>
+          <p>7 – 15 let</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">💰</div>
+          <h3>Cena</h3>
+          <p>5 500 Kč</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>
+          Náš tábor nabízí bohatý program plný sportovních aktivit, kreativních dílen,
+          výletů do přírody a celotáborové hry. Děti se učí spolupráci, získávají nové
+          dovednosti a hlavně si užívají prázdniny!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section section-alt" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Galerie</h2>
+      <p class="section-subtitle">Podívejte se, jak to u nás vypadá</p>
+      <div class="gallery-tabs">
+        <button class="gallery-tab active" data-year="2026">2026</button>
+        <button class="gallery-tab" data-year="2025">2025</button>
+        <button class="gallery-tab" data-year="2024">2024</button>
+        <button class="gallery-tab" data-year="2023">2023</button>
+        <button class="gallery-tab" data-year="2022">2022</button>
+        <button class="gallery-tab" data-year="2021">2021</button>
+        <button class="gallery-tab" data-year="2020">2020</button>
+      </div>
+
+      <div class="gallery-year active" id="gallery-2026">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2026/6205494.webp" alt="Rakousy 2026" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2026/OIP.webp" alt="Rakousy 2026" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2026/ptakopysk_ipu71fr-500-500.webp" alt="Rakousy 2026" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2025">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2025/6205494.webp" alt="Rakousy 2025" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2025/OIP.webp" alt="Rakousy 2025" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2024">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2024/ptakopysk_ipu71fr-500-500.webp" alt="Rakousy 2024" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2024/OIP.webp" alt="Rakousy 2024" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2023">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2023/6205494.webp" alt="Rakousy 2023" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2023/ptakopysk_ipu71fr-500-500.webp" alt="Rakousy 2023" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2022">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2022/OIP.webp" alt="Rakousy 2022" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2022/ptakopysk_ipu71fr-500-500.webp" alt="Rakousy 2022" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2021">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2021/6205494.webp" alt="Rakousy 2021" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2021/OIP.webp" alt="Rakousy 2021" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="gallery-year" id="gallery-2020">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery/2020/ptakopysk_ipu71fr-500-500.webp" alt="Rakousy 2020" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/gallery/2020/6205494.webp" alt="Rakousy 2020" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section class="section" id="registration">
+    <div class="container">
+      <h2 class="section-title">Přihláška</h2>
+      <p class="section-subtitle">Vyplňte formulář a my se vám ozveme</p>
+      <form class="form" id="registrationForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="childName">Jméno a příjmení dítěte</label>
+            <input type="text" id="childName" name="childName" required placeholder=" ">
+            <div class="form-error">Vyplňte jméno dítěte</div>
+          </div>
+          <div class="form-group">
+            <label for="birthDate">Datum narození dítěte</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+            <div class="form-error">Vyplňte datum narození</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parentName">Jméno a příjmení zákonného zástupce</label>
+            <input type="text" id="parentName" name="parentName" required placeholder=" ">
+            <div class="form-error">Vyplňte jméno zákonného zástupce</div>
+          </div>
+          <div class="form-group">
+            <label for="parentEmail">E-mail</label>
+            <input type="email" id="parentEmail" name="parentEmail" required placeholder=" ">
+            <div class="form-error">Vyplňte platný e-mail</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parentPhone">Telefon</label>
+            <input type="tel" id="parentPhone" name="parentPhone" required placeholder=" ">
+            <div class="form-error">Vyplňte telefonní číslo</div>
+          </div>
+          <div class="form-group">
+            <label for="address">Adresa bydliště</label>
+            <input type="text" id="address" name="address" placeholder=" ">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="healthInfo">Zdravotní omezení / alergie</label>
+          <textarea id="healthInfo" name="healthInfo" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="regNote">Poznámka</label>
+          <textarea id="regNote" name="regNote" rows="3"></textarea>
+        </div>
+        <p class="form-required-note">* Povinné údaje</p>
+        <button type="submit" class="btn btn-primary">Odeslat přihlášku</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Kontakt</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Kontaktní údaje</h3>
+          <p><strong>Hlavní vedoucí:</strong> Jan Novák</p>
+          <p>📧 <a href="mailto:tabor@rakousy.cz">tabor@rakousy.cz</a></p>
+          <p>📞 <a href="tel:+420123456789">+420 123 456 789</a></p>
+          <p>📍 Rakousy, Český ráj</p>
+        </div>
+        <div class="contact-form-wrap">
+          <h3>Napište nám</h3>
+          <form class="form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="contactName">Vaše jméno</label>
+              <input type="text" id="contactName" name="contactName" required placeholder=" ">
+              <div class="form-error">Vyplňte vaše jméno</div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Váš e-mail</label>
+              <input type="email" id="contactEmail" name="contactEmail" required placeholder=" ">
+              <div class="form-error">Vyplňte platný e-mail</div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Zpráva</label>
+              <textarea id="contactMessage" name="contactMessage" rows="4" required placeholder=" "></textarea>
+              <div class="form-error">Napište zprávu</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 LDT Rakousy 2. turnus. Všechna práva vyhrazena.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
