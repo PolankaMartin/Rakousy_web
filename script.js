@@ -2,24 +2,27 @@
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Close mobile nav on link click
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+}
 
 // Navbar background on scroll
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.style.boxShadow = window.scrollY > 50
-    ? '0 2px 12px rgba(0,0,0,0.12)'
-    : '0 2px 8px rgba(0,0,0,0.08)';
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.scrollY > 50
+      ? '0 2px 12px rgba(0,0,0,0.12)'
+      : '0 2px 8px rgba(0,0,0,0.08)';
+  });
+}
 
 // Gallery year tabs
 document.querySelectorAll('.gallery-tab').forEach(tab => {
@@ -27,18 +30,31 @@ document.querySelectorAll('.gallery-tab').forEach(tab => {
     document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.gallery-year').forEach(y => y.classList.remove('active'));
     tab.classList.add('active');
-    document.getElementById('gallery-' + tab.dataset.year).classList.add('active');
+    const target = document.getElementById('gallery-' + tab.dataset.year);
+    if (target) target.classList.add('active');
   });
 });
 
-// Form submission handler with validation
-function handleFormSubmit(form, successMessage) {
-  form.addEventListener('submit', (e) => {
+function showFormMessage(form, text, type = 'success') {
+  const existing = form.querySelector('.form-message');
+  if (existing) existing.remove();
+
+  const msg = document.createElement('div');
+  msg.className = `form-message ${type === 'error' ? 'form-error-message' : 'form-success'}`;
+  msg.textContent = text;
+  form.appendChild(msg);
+
+  setTimeout(() => msg.remove(), 5000);
+}
+
+async function handleFormSubmit(form, successMessage) {
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     form.classList.add('submitted');
 
     if (!form.checkValidity()) {
-      // Scroll to the first invalid field
       const firstInvalid = form.querySelector(':invalid');
       if (firstInvalid) {
         firstInvalid.focus();
@@ -47,26 +63,34 @@ function handleFormSubmit(form, successMessage) {
       return;
     }
 
-    // Collect form data
     const data = Object.fromEntries(new FormData(form));
-    console.log('Form submitted:', data);
+    data.formType = form.id;
 
-    // Show success message
-    const existing = form.querySelector('.form-success');
-    if (existing) existing.remove();
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
 
-    const msg = document.createElement('div');
-    msg.className = 'form-success';
-    msg.textContent = successMessage;
-    form.appendChild(msg);
+      const payload = await response.json().catch(() => ({}));
 
-    form.reset();
-    form.classList.remove('submitted');
+      if (!response.ok) {
+        throw new Error(payload.error || 'Email failed to send.');
+      }
 
-    setTimeout(() => msg.remove(), 5000);
+      showFormMessage(form, successMessage, 'success');
+      form.reset();
+      form.classList.remove('submitted');
+    } catch (error) {
+      console.error(error);
+      showFormMessage(form, error.message || 'Něco se nepovedlo. Zkuste to prosím znovu.', 'error');
+      form.classList.remove('submitted');
+    }
   });
 
-  // Remove error styling as user fixes fields
   form.querySelectorAll('input, textarea').forEach(input => {
     input.addEventListener('input', () => {
       if (input.validity.valid) {

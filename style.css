@@ -370,6 +370,27 @@ img {
   display: block;
 }
 
+/* ===== Success Message ===== */
+.form-message {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.form-success {
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #2e7d32;
+}
+
+.form-error-message {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #b71c1c;
+}
+
 /* ===== Contact ===== */
 .contact-grid {
   display: grid;
@@ -395,18 +416,6 @@ img {
   background: #2e7d32;
   color: rgba(255,255,255,0.8);
   font-size: 0.9rem;
-}
-
-/* ===== Success Message ===== */
-.form-success {
-  background: #e8f5e9;
-  border: 1px solid #a5d6a7;
-  color: #2e7d32;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 1rem;
 }
 
 /* ===== Responsive ===== */
