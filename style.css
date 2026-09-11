@@ -399,10 +399,28 @@ img {
   margin-top: 2rem;
 }
 
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
 .contact-info h3,
 .contact-form-wrap h3 {
   margin-bottom: 1rem;
   color: #2e7d32;
+}
+
+.leader-photo {
+  width: 260px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+
+.contact-details {
+  padding-top: 0.15rem;
 }
 
 .contact-info p {
@@ -451,5 +469,9 @@ img {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contact-info {
+    align-items: flex-start;
   }
 }

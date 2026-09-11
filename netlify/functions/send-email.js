@@ -88,6 +88,12 @@ exports.handler = async function handler(event) {
     const payload = JSON.parse(event.body || '{}');
     const formType = payload.formType || 'contactForm';
     const emailBody = createEmailBody(formType, payload);
+    const replyToEmail = formType === 'registrationForm'
+      ? payload.parentEmail
+      : payload.contactEmail;
+    const replyTo = replyToEmail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(replyToEmail)
+      ? { email: replyToEmail }
+      : undefined;
 
     const response = await fetch(BREVO_API_URL, {
       method: 'POST',
@@ -107,11 +113,15 @@ exports.handler = async function handler(event) {
         }],
         subject: emailBody.subject,
         htmlContent: emailBody.htmlContent,
-        textContent: emailBody.textContent
+        textContent: emailBody.textContent,
+        ...(replyTo ? { replyTo } : {})
       })
     });
 
     const responseText = await response.text();
+    
+    console.log('Brevo status:', response.status);
+    console.log('Brevo body:', responseText);
 
     if (!response.ok) {
       return {
