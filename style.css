@@ -239,6 +239,43 @@ img {
   margin-top: 1rem;
 }
 
+/* ===== Why Rakousy ===== */
+.why-section {
+  background: #fffdf4;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.why-card {
+  padding: 1.25rem;
+  background: #ffffff;
+  border-left: 4px solid #f4b942;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(31, 67, 38, 0.08);
+}
+
+.why-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.why-card h3 {
+  font-family: 'Mansalva', cursive;
+  color: #2e7d32;
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.why-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
 .gallery-tabs {
   display: flex;
   justify-content: center;
@@ -551,6 +588,10 @@ img {
   }
 
   .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,0 +1,23 @@
+LDT Rakousy Web - TODO
+
+Priority 1
+[ ] Improve the gallery UX with a responsive grid/masonry layout and lightbox.
+
+Priority 2
+[ ] Split the registration form into clear steps.
+[ ] Add a sticky or highly visible registration CTA in the navigation/mobile view.
+[ ] Add an FAQ accordion for parents.
+[ ] Make the contact/team section more trustworthy with roles, descriptions, and photos.
+
+Visual direction
+[ ] Keep the nature/adventure/summer identity.
+[ ] Use green, cream, and one warm yellow/orange CTA accent.
+[ ] Keep animations and decorative elements subtle.
+[ ] Preserve a compact, readable mobile layout.
+
+Technical follow-up
+[ ] Move gallery data out of hardcoded HTML into structured data.
+[ ] Optimize gallery images to WebP/AVIF with thumbnails and lazy loading.
+[ ] Keep original photos separate from deployable optimized images.
+[ ] Avoid sending full-size original photos directly to browsers.
+[ ] Review accessibility: alt text, keyboard navigation, focus states, and form errors.
