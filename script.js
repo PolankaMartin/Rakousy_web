@@ -35,6 +35,29 @@ document.querySelectorAll('.gallery-tab').forEach(tab => {
   });
 });
 
+function scrollActiveGallery(direction) {
+  const activeGallery = document.querySelector('.gallery-year.active .gallery-grid');
+  if (!activeGallery) return;
+
+  const galleryItem = activeGallery.querySelector('.gallery-item');
+  const scrollDistance = galleryItem
+    ? galleryItem.getBoundingClientRect().width + 16
+    : activeGallery.clientWidth;
+
+  activeGallery.scrollBy({
+    left: direction * scrollDistance,
+    behavior: 'smooth'
+  });
+}
+
+const galleryPrev = document.getElementById('galleryPrev');
+const galleryNext = document.getElementById('galleryNext');
+
+if (galleryPrev && galleryNext) {
+  galleryPrev.addEventListener('click', () => scrollActiveGallery(-1));
+  galleryNext.addEventListener('click', () => scrollActiveGallery(1));
+}
+
 function showFormMessage(form, text, type = 'success') {
   const existing = form.querySelector('.form-message');
   if (existing) existing.remove();
