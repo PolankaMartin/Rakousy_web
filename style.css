@@ -42,9 +42,12 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 0.8rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+    url('images/background_rakousy.JPG') center 45% / cover;
   backdrop-filter: blur(6px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-bottom: 3px solid #2e7d32;
   z-index: 1000;
 }
 
@@ -65,7 +68,7 @@ img {
 
 .nav-links a {
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s;
 }
 
@@ -136,10 +139,11 @@ img {
 
 /* ===== Buttons ===== */
 .btn {
+  font-family: inherit;
   display: inline-block;
   padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -153,22 +157,24 @@ img {
 }
 
 .btn-primary {
-  background: #2e7d32;
-  color: white;
+  background: #f4b942;
+  color: #26351f;
+  box-shadow: 0 3px 10px rgba(88, 61, 8, 0.25);
 }
 
 .btn-primary:hover {
-  background: #256b29;
-  color: white;
+  background: #ffd166;
+  color: #26351f;
+  box-shadow: 0 5px 14px rgba(88, 61, 8, 0.3);
 }
 
 /* ===== Sections ===== */
 .section {
-  padding: 5rem 2rem;
+  padding: 3.5rem 2rem;
 }
 
 .section-alt {
-  background: #f5f5f5;
+  background: #eef5e9;
 }
 
 .container {
@@ -177,6 +183,7 @@ img {
 }
 
 .section-title {
+  font-family: 'Mansalva', cursive;
   font-size: 2.2rem;
   text-align: center;
   margin-bottom: 0.5rem;
@@ -186,7 +193,7 @@ img {
 .section-subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== About ===== */
@@ -194,15 +201,15 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .about-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(31, 67, 38, 0.1);
   transition: transform 0.2s;
 }
 
@@ -216,13 +223,14 @@ img {
 }
 
 .about-card h3 {
+  font-family: 'Mansalva', cursive;
   margin-bottom: 0.4rem;
   color: #2e7d32;
 }
 
 .about-text {
   max-width: 800px;
-  margin: 2rem auto 0;
+  margin: 1.5rem auto 0;
   text-align: center;
   color: #555;
 }
@@ -237,6 +245,9 @@ img {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 2rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: rgba(255, 253, 244, 0.82);
 }
 
 .gallery-tab {
@@ -244,7 +255,7 @@ img {
   padding: 0.5rem 1.2rem;
   border: 2px solid #2e7d32;
   border-radius: 20px;
-  background: transparent;
+  background: #fffdf4;
   color: #2e7d32;
   font-weight: 600;
   font-size: 0.95rem;
@@ -259,6 +270,7 @@ img {
 .gallery-tab.active {
   background: #2e7d32;
   color: white;
+  box-shadow: 0 3px 0 #1f5723;
 }
 
 .gallery-nav {
@@ -318,10 +330,12 @@ img {
 }
 
 .gallery-item {
-  flex: 0 0 250px;
-  border-radius: 10px;
+  flex: 0 0 320px;
+  border: 6px solid white;
+  border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  box-shadow: 0 6px 18px rgba(31, 67, 38, 0.18);
 }
 
 .gallery-item img {
@@ -438,8 +452,8 @@ img {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
 .contact-info {
@@ -451,6 +465,7 @@ img {
 
 .contact-info h3,
 .contact-form-wrap h3 {
+  font-family: 'Mansalva', cursive;
   margin-bottom: 1rem;
   color: #2e7d32;
 }
@@ -459,8 +474,10 @@ img {
   width: 260px;
   height: 340px;
   object-fit: cover;
-  border-radius: 6px;
+  border: 6px solid #fffdf4;
+  border-radius: 10px;
   flex: 0 0 auto;
+  box-shadow: 0 6px 18px rgba(31, 67, 38, 0.18);
 }
 
 .contact-details {
@@ -484,6 +501,10 @@ img {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 1.25rem;
+  }
+
   .nav-toggle {
     display: block;
   }
@@ -524,8 +545,8 @@ img {
   }
 
   .gallery-item {
-    flex: 0 0 78vw;
-    max-width: 300px;
+    flex: 0 0 84vw;
+    max-width: 360px;
     scroll-snap-align: start;
   }
 
