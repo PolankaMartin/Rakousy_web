@@ -1,17 +1,33 @@
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 
+const FIELD_LABELS = {
+  childName: 'Jméno a příjmení dítěte',
+  birthDate: 'Datum narození dítěte',
+  parentName: 'Jméno a příjmení zákonného zástupce',
+  parentEmail: 'E-mail zákonného zástupce',
+  parentPhone: 'Telefon zákonného zástupce',
+  address: 'Adresa bydliště',
+  healthInfo: 'Zdravotní omezení / alergie',
+  regNote: 'Poznámka k přihlášce',
+  contactName: 'Jméno',
+  contactEmail: 'E-mail',
+  contactMessage: 'Zpráva'
+};
+
+function getEmailEntries(data) {
+  return Object.entries(data)
+    .filter(([key, value]) => key !== 'formType' && value !== undefined && value !== null && value !== '');
+}
+
 function buildFieldsHtml(data) {
-  const entries = Object.entries(data).filter(([, value]) => value !== undefined && value !== null && value !== '');
+  const entries = getEmailEntries(data);
 
   if (!entries.length) {
     return '<p>Žádné údaje nebyly odeslány.</p>';
   }
 
   const rows = entries.map(([key, value]) => {
-    const label = key
-      .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, (char) => char.toUpperCase())
-      .trim();
+    const label = FIELD_LABELS[key] || 'Další údaj';
 
     return `
       <tr>
@@ -47,6 +63,11 @@ function createEmailBody(formType, data) {
     ? 'Přihláška na tábor'
     : 'Zpráva z kontaktního formuláře';
 
+  const entries = getEmailEntries(data);
+  const textContent = entries.length
+    ? `${heading}\n\n${entries.map(([key, value]) => `${FIELD_LABELS[key] || 'Další údaj'}: ${value}`).join('\n')}`
+    : `${heading}\n\nŽádné údaje nebyly odeslány.`;
+
   const htmlContent = `
     <div style="font-family:Arial,sans-serif; color:#1f2937; line-height:1.6;">
       <h2 style="margin:0 0 1rem; color:#2e7d32;">${heading}</h2>
@@ -54,12 +75,7 @@ function createEmailBody(formType, data) {
     </div>
   `;
 
-  const textContent = Object.entries(data)
-    .filter(([, value]) => value !== undefined && value !== null && value !== '')
-    .map(([key, value]) => `${key}: ${value}`)
-    .join('\n');
-
-  return { subject, htmlContent, textContent: textContent || 'Žádné údaje nebyly odeslány.' };
+  return { subject, htmlContent, textContent };
 }
 
 exports.handler = async function handler(event) {
