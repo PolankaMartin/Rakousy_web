@@ -170,7 +170,7 @@ img {
 
 /* ===== Sections ===== */
 .section {
-  padding: 3.5rem 2rem;
+  padding: 2.8rem 2rem;
 }
 
 .section-alt {
@@ -186,22 +186,22 @@ img {
   font-family: 'Mansalva', cursive;
   font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #2e7d32;
 }
 
 .section-subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 /* ===== About ===== */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
 }
 
 .about-card {
@@ -230,7 +230,7 @@ img {
 
 .about-text {
   max-width: 800px;
-  margin: 1.5rem auto 0;
+  margin: 1.2rem auto 0;
   text-align: center;
   color: #555;
 }
@@ -248,7 +248,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
 }
 
 .why-card {
@@ -285,7 +285,7 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   padding: 0.75rem;
   border-radius: 12px;
   background: rgba(255, 253, 244, 0.82);
@@ -342,7 +342,7 @@ img {
   flex-direction: column;
   overflow-x: auto;
   gap: 3px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   padding: 0;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
@@ -484,8 +484,8 @@ img {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
 }
 
 .contact-info {
@@ -525,7 +525,7 @@ img {
 /* ===== Footer ===== */
 .footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1.6rem;
   background: #2e7d32;
   color: rgba(255,255,255,0.8);
   font-size: 0.9rem;
@@ -534,7 +534,7 @@ img {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .section {
-    padding: 2.5rem 1.25rem;
+    padding: 2rem 1.25rem;
   }
 
   .nav-toggle {
@@ -579,8 +579,8 @@ img {
 
   .about-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.55rem;
-    margin: 0.85rem 0;
+    gap: 0.44rem;
+    margin: 0.68rem 0;
   }
 
   .about-card {
@@ -612,7 +612,7 @@ img {
     grid-auto-flow: column;
     grid-template-columns: none;
     gap: 0.75rem;
-    margin: 1.5rem -1.25rem 0;
+    margin: 1.2rem -1.25rem 0;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     padding: 0 1.25rem 0.75rem;
