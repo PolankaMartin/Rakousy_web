@@ -573,6 +573,37 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin: 0.85rem 0;
+  }
+
+  .about-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.45rem;
+    padding: 0.65rem 0.55rem;
+    text-align: left;
+  }
+
+  .about-icon {
+    font-size: 1.35rem;
+    margin-bottom: 0;
+  }
+
+  .about-card h3 {
+    font-size: 0.9rem;
+    line-height: 1.15;
+    margin-bottom: 0.1rem;
+  }
+
+  .about-card p {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
   .why-grid {
     grid-auto-columns: clamp(180px, 28vw, 280px);
     grid-auto-flow: column;
