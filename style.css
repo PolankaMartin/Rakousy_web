@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&family=Mansalva&display=swap');
 
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   color: #333;
   line-height: 1.6;
 }
@@ -112,9 +112,9 @@ img {
 }
 
 .hero h1 {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   font-size: 4.4rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.02em;
   -webkit-text-stroke: 0.35px currentColor;
   margin-bottom: 0.5rem;
@@ -123,7 +123,7 @@ img {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 1rem;
   opacity: 1;
   text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
@@ -135,6 +135,10 @@ img {
   margin-bottom: 2rem;
   opacity: 1;
   text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero-content .btn {
+  font-weight: 400;
 }
 
 /* ===== Buttons ===== */
@@ -183,7 +187,7 @@ img {
 }
 
 .section-title {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   font-size: 2.2rem;
   text-align: center;
   margin-bottom: 0.4rem;
@@ -223,7 +227,7 @@ img {
 }
 
 .about-card h3 {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   margin-bottom: 0.4rem;
   color: #2e7d32;
 }
@@ -265,7 +269,7 @@ img {
 }
 
 .why-card h3 {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   color: #2e7d32;
   font-size: 1.15rem;
   margin-bottom: 0.35rem;
@@ -497,7 +501,7 @@ img {
 
 .contact-info h3,
 .contact-form-wrap h3 {
-  font-family: 'Mansalva', cursive;
+  font-family: 'Mogra', cursive;
   margin-bottom: 1rem;
   color: #2e7d32;
 }
@@ -574,7 +578,44 @@ img {
   }
 
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group label {
+    font-size: 0.82rem;
+    line-height: 1.25;
+    margin-bottom: 0.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .form-error {
+    font-size: 0.75rem;
+  }
+
+  .contact-form-wrap .form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 0.65rem;
+  }
+
+  .contact-form-wrap .form > .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-form-wrap .form > .form-group:nth-of-type(3),
+  .contact-form-wrap .form > button,
+  .contact-form-wrap .form > .form-message {
+    grid-column: 1 / -1;
   }
 
   .about-grid {
@@ -682,5 +723,18 @@ img {
 
   .contact-details {
     flex: 1 1 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-row,
+  .contact-form-wrap .form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap .form > .form-group:nth-of-type(3),
+  .contact-form-wrap .form > button,
+  .contact-form-wrap .form > .form-message {
+    grid-column: auto;
   }
 }
