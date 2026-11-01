@@ -561,6 +561,10 @@ img {
     font-size: 3.2rem;
   }
 
+  .hero {
+    min-height: 66vh;
+  }
+
   .gallery-grid {
     height: 430px;
     flex-direction: column;
