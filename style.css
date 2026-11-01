@@ -595,23 +595,29 @@ img {
   .why-card {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    align-items: center;
-    column-gap: 0.65rem;
+    align-items: start;
+    column-gap: 0.4rem;
     min-width: 0;
+    padding: 0.65rem;
     scroll-snap-align: start;
   }
 
   .why-icon {
+    font-size: 1.35rem;
     margin-bottom: 0;
   }
 
   .why-card h3 {
+    font-size: 0.9rem;
+    line-height: 1.15;
     margin-bottom: 0;
   }
 
   .why-card p {
     grid-column: 1 / -1;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
   }
 
   .why-scroll-hint {
